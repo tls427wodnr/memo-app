@@ -85,7 +85,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("선택된 아이템: \(memoList[indexPath.row])")
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
