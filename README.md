@@ -7,3 +7,4 @@
   - UserDefaults를 이용한 메모 저장 
 
 # 시연 영상
+https://tlswodnr427.tistory.com/13
