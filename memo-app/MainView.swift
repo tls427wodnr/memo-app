@@ -19,7 +19,9 @@ class MainView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension MainView {
     private func setupView(){
         backgroundColor = .white
         
@@ -45,5 +47,4 @@ class MainView: UIView {
             tableView.backgroundView = nil
         }
     }
-
 }

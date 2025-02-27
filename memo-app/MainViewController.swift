@@ -24,8 +24,11 @@ class MainViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
     }
+}
+
+private extension MainViewController {
     
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         title = "Memo App"
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -33,14 +36,13 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = addButton
     }
     
-    private func setupTableView() {
+    func setupTableView() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-
     
-    @objc private func addItem() {
+    @objc func addItem() {
         let alert = UIAlertController(title: "", message: "새로운 메모를 추가하시겠습니까?", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "확인", style: .default) { _ in
@@ -61,14 +63,14 @@ class MainViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    private func saveData() {
-        UserDefaults.standard.set(memoList, forKey: "memoList")
-    }
-    
-    private func loadData() {
+    func loadData() {
         if let savedMemoList = UserDefaults.standard.array(forKey: "memoList") as? [String] {
             memoList = savedMemoList
         }
+    }
+    
+    func saveData() {
+        UserDefaults.standard.set(memoList, forKey: "memoList")
     }
 }
 
